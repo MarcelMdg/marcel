@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap');
 
+/* Basic Resets & Global Styles */
 * {
   margin: 0;
   padding: 0;
@@ -8,14 +9,14 @@
 }
 
 .card {
-  color: #fff;
+  color: #fff; /* Applied to cards in Services, Skills (icons), Teams */
 }
 
 html {
   scroll-behavior: smooth;
 }
 
-/* custom scroll bar */
+/* Custom Scroll Bar */
 ::-webkit-scrollbar {
   width: 10px;
 }
@@ -32,7 +33,7 @@ html {
   background: #555;
 }
 
-/* all similar content styling codes */
+/* Common Section Styling */
 section {
   padding: 100px 0;
 }
@@ -43,18 +44,22 @@ section {
   margin: auto;
 }
 
+/* Font families for sections */
 .about,
 .services,
 .skills,
 .teams,
+.projects, /* Added projects to use Poppins font */
 .contact,
 footer {
   font-family: 'Poppins', sans-serif;
 }
 
+/* Flexbox layout for main content containers */
 .about .about-content,
 .services .serv-content,
 .skills .skills-content,
+.projects .proj-content, /* Added projects */
 .contact .contact-content {
   display: flex;
   flex-wrap: wrap;
@@ -62,7 +67,7 @@ footer {
   justify-content: space-between;
 }
 
-
+/* Section Title Styling */
 section .title {
   position: relative;
   text-align: center;
@@ -95,7 +100,7 @@ section .title::after {
   transform: translateX(-50%);
 }
 
-/* navbar styling */
+/* Navbar Styling */
 .navbar {
   position: fixed;
   width: 100%;
@@ -153,7 +158,7 @@ section .title::after {
   color: #fff;
 }
 
-/* menu btn styling */
+/* Menu Button Styling (for mobile) */
 .menu-btn {
   color: #fff;
   font-size: 23px;
@@ -161,6 +166,7 @@ section .title::after {
   display: none;
 }
 
+/* Scroll Up Button Styling */
 .scroll-up-btn {
   position: fixed;
   height: 45px;
@@ -191,11 +197,10 @@ section .title::after {
   filter: brightness(100%);
 }
 
-
-/* home section styling */
+/* Home Section Styling */
 .home {
   display: flex;
-  background: url("images/logo-white.jpg") no-repeat center;*/
+  background: url("images/logo-white.jpg") no-repeat center; /* Assure-toi que cette image existe */
   height: 100vh;
   color: #fff;
   min-height: 500px;
@@ -210,6 +215,7 @@ section .title::after {
   display: flex;
 }
 
+/* Le .row est peut-être inutile ici si tu n'as pas de colonne à droite dans home */
 .home .max-width .row {
   margin-right: 0;
 }
@@ -252,68 +258,19 @@ section .title::after {
   background: none;
 }
 
-/* about section styling */
+/* About Section Styling */
 .about .title::after {
   content: "Qui suis-je ?";
 }
 
-/*.about .about-content .left {
-  width: 45%;
-}*/
-
-/*.about .about-content .left img {
-  height: 400px;
-  width: 400px;
-  object-fit: cover;
-  border-radius: 6px;
-}*/
-
 .about .about-content {
-  display: flex; /* Transforme le conteneur en flex container */
-  align-items: center; /* Centre verticalement les éléments enfants */
+  display: flex; /* Déjà défini dans .about .about-content, mais réaffirmé pour la clarté si besoin */
+  align-items: center;
 }
 
 .about .about-content .right {
-  width: 85%; /* Garde la largeur que tu as définie */
-  padding-left: 20%;
-}
-
-/* Le reste de ton CSS pour .right reste inchangé */
-.about .about-content .right .text {
-  font-size: 25px;
-  font-weight: 600;
-  margin-bottom: 10px;
-}
-
-.about .about-content .right .text span {
-  color: crimson;
-}
-
-.about .about-content .right p {
-  text-align: justify;
-}
-
-.about .about-content .right a {
-  display: inline-block;
-  background: crimson;
-  color: #fff;
-  font-size: 20px;
-  font-weight: 500;
-  padding: 10px 30px;
-  margin-top: 20px;
-  border-radius: 6px;
-  border: 2px solid crimson;
-  transition: all 0.3s ease;
-}
-
-.about .about-content .right a:hover {
-  color: crimson;
-  background: none;
-}
-
-
-/*.about .about-content .right {
-  width: 55%;
+  width: 85%; /* Adjust as needed if a left image column is re-added */
+  padding-left: 20%; /* Adjust as needed */
 }
 
 .about .about-content .right .text {
@@ -346,11 +303,11 @@ section .title::after {
 .about .about-content .right a:hover {
   color: crimson;
   background: none;
-}*/
+}
 
-/* services section styling */
+/* Services Section Styling */
 .services,
-.teams {
+.teams { /* Teams also uses a dark background */
   color: #fff;
   background: #111;
 }
@@ -360,8 +317,7 @@ section .title::after {
   background: #fff;
 }
 
-.services .title::after,
-.teams .title::after {
+.services .title::after {
   background: #111;
   content: "Ce que j'offre ";
 }
@@ -404,8 +360,7 @@ section .title::after {
   margin: 10px 0 7px 0;
 }
 
-/* skills section styling */
-
+/* Skills Section Styling */
 .skills .title::after {
   content: "Mes acquis";
 }
@@ -442,66 +397,134 @@ section .title::after {
   background: none;
 }
 
-.skills .skills-content .right .bars {
-  margin-bottom: 15px;
+/* Skills Icons Styling (New) */
+.skills-content .column.right .skills-icons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+    width: 100%;
 }
 
-.skills .skills-content .right .info {
-  display: flex;
-  margin-bottom: 5px;
-  align-items: center;
-  justify-content: space-between;
+.skills-content .column.right .skills-icons .skill-item {
+    text-align: center;
+    color: #fff;
+    background: #222;
+    border-radius: 9px;
+    padding: 20px 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    flex: 1 1 calc(33% - 40px);
+    max-width: 150px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
-.skills .skills-content .right span {
-  font-weight: 500;
-  font-size: 18px;
+.skills-content .column.right .skills-icons .skill-item:hover {
+    background: crimson;
+    transform: translateY(-5px);
 }
 
-.skills .skills-content .right .line {
-  height: 5px;
-  width: 100%;
-  background: lightgrey;
-  position: relative;
-  border-radius: 20px;
+.skills-content .column.right .skills-icons .skill-item i {
+    font-size: 50px;
+    color: crimson;
+    margin-bottom: 10px;
+    transition: all 0.3s ease;
 }
 
-.skills .skills-content .right .line::before {
-  content: "";
-  position: absolute;
-  height: 100%;
-  left: 0;
-  top: 0;
-  background: crimson;
+.skills-content .column.right .skills-icons .skill-item:hover i {
+    color: #fff;
 }
 
-.skills-content .right .html::before {
-  width: 90%;
-  border-radius: 20px;
+.skills-content .column.right .skills-icons .skill-item .skill-name {
+    font-size: 18px;
+    font-weight: 500;
+    color: #fff;
+    margin-top: 10px;
 }
 
-.skills-content .right .css::before {
-  width: 60%;
-  border-radius: 20px;
+/* Projects Section Styling */
+.projects {
+    background: #f0f0f0;
+    color: #111;
 }
 
-.skills-content .right .js::before {
-  width: 50%;
-  border-radius: 20px;
+.projects .title::after {
+    content: "Mes créations";
 }
 
-.skills-content .right .php::before {
-  width: 50%;
-  border-radius: 20px;
+.projects .proj-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 30px;
 }
 
-.skills-content .right .mysql::before {
-  width: 70%;
-  border-radius: 20px;
+.projects .proj-content .card {
+    background: #fff;
+    border-radius: 9px;
+    padding: 25px;
+    text-align: center;
+    width: calc(33% - 40px); /* 3 cartes par ligne sur les grands écrans */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    cursor: pointer;
 }
 
+.projects .proj-content .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
 
-/* teams section styling */
+/* Project Carousel Specific Styles */
+.projects .proj-content .card .project-carousel {
+    margin-bottom: 20px; /* Espace sous le carrousel avant le titre du projet */
+}
+
+.projects .proj-content .card .project-carousel img {
+    width: 100%;
+    height: 250px; /* Augmentation de la hauteur pour plus de visibilité */
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+/* Project Card Content (Text and Paragraph) */
+.projects .proj-content .card .text {
+    font-size: 22px;
+    font-weight: 600;
+    margin-top: 15px; /* Espace au-dessus du titre du projet */
+    margin-bottom: 10px;
+    color: crimson;
+}
+
+.projects .proj-content .card p {
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 20px; /* Espace sous la description */
+    color: #555;
+}
+
+/* Owl Carousel Dots for Projects */
+.projects .proj-content .card .owl-dots {
+    margin-top: 10px;
+}
+
+.projects .proj-content .card .owl-dot {
+    height: 10px;
+    width: 10px;
+    margin: 0 4px;
+    background: #ccc !important;
+    border: none !important;
+    transition: all 0.3s ease;
+}
+
+.projects .proj-content .card .owl-dot.active {
+    background: crimson !important;
+    width: 25px;
+    border-radius: 14px;
+}
+
+/* Teams Section Styling */
 .teams .title::after {
   content: "Who With Me";
 }
@@ -550,12 +573,12 @@ section .title::after {
   border-color: #fff;
 }
 
-.owl-dots {
+.owl-dots { /* Global Owl Carousel dots style - used by teams carousel */
   text-align: center;
   margin-top: 20px;
 }
 
-.owl-dot {
+.owl-dot { /* Global Owl Carousel dot style - used by teams carousel */
   height: 13px;
   width: 13px;
   margin: 0 5px;
@@ -565,17 +588,17 @@ section .title::after {
   transition: all 0.3s ease;
 }
 
-.owl-dot.active {
+.owl-dot.active { /* Global Owl Carousel active dot style - used by teams carousel */
   width: 35px;
   border-radius: 14px;
 }
 
 .owl-dot.active,
-.owl-dot:hover {
+.owl-dot:hover { /* Global Owl Carousel active/hover dot style - used by teams carousel */
   background: crimson !important;
 }
 
-/* contact section styling */
+/* Contact Section Styling */
 .contact .title::after {
   content: "Prenez contact";
 }
@@ -690,7 +713,7 @@ section .title::after {
   background: none;
 }
 
-/* footer section styling */
+/* Footer Section Styling */
 footer {
   background: #111;
   padding: 15px 23px;
@@ -707,8 +730,7 @@ footer span a:hover {
   text-decoration: underline;
 }
 
-
-/* responsive media query start */
+/* Responsive Media Queries */
 @media (max-width: 1104px) {
   .about .about-content .left img {
     height: 350px;
@@ -723,15 +745,14 @@ footer span a:hover {
 }
 
 @media (max-width: 947px) {
+  /* Navbar adjustments */
   .menu-btn {
     display: block;
     z-index: 999;
   }
-
   .menu-btn i.active:before {
-    content: "\f00d";
+    content: "\f00d"; /* Change icon to X */
   }
-
   .navbar .menu {
     position: fixed;
     height: 100vh;
@@ -743,62 +764,57 @@ footer span a:hover {
     padding-top: 80px;
     transition: all 0.3s ease;
   }
-
   .navbar .menu.active {
     left: 0;
   }
-
   .navbar .menu li {
     display: block;
   }
-
   .navbar .menu li a {
     display: inline-block;
     margin: 20px 0;
     font-size: 25px;
   }
 
+  /* Home section adjustments */
   .home .home-content .text-2 {
     font-size: 70px;
   }
-
   .home .home-content .text-3 {
     font-size: 35px;
   }
-
   .home .home-content a {
     font-size: 23px;
     padding: 10px 30px;
   }
 
+  /* Layout adjustments for columns */
   .max-width {
     max-width: 930px;
   }
-
   .about .about-content .column {
     width: 100%;
   }
-
   .about .about-content .left {
     display: flex;
     justify-content: center;
     margin: 0 auto 60px;
   }
-
   .about .about-content .right {
     flex: 100%;
     padding: 0;
   }
-
   .services .serv-content .card {
     width: calc(50% - 10px);
     margin-bottom: 20px;
   }
-
   .skills .skills-content .column,
   .contact .contact-content .column {
     width: 100%;
     margin-bottom: 35px;
+  }
+  .projects .proj-content .card { /* Projects responsive */
+    width: calc(50% - 20px);
   }
 }
 
@@ -822,6 +838,9 @@ footer span a:hover {
   .services .serv-content .card {
     width: 100%;
   }
+  .projects .proj-content .card { /* Projects responsive */
+    width: 100%;
+  }
 }
 
 .head {
@@ -833,7 +852,6 @@ footer span a:hover {
 .rm-ol li {
   padding: 5px 0;
 }
-
 
 @media (max-width: 500px) {
   .home .home-content .text-2 {
@@ -871,14 +889,366 @@ footer span a:hover {
     line-height: 38px;
   }
 }
-/* le scroll */
-.produit .card {
+
+/* Animation on scroll for products */
+.produit { /* Applied directly to the section/card that needs to appear */
   opacity: 0;
-  transform: translateY(50px); /* Tu peux ajuster cette valeur */
+  transform: translateY(50px);
   transition: opacity 0.5s ease-out, transform 0.5s ease-out;
 }
 
-.produit.visible .card {
+.produit.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* Section Projets - Nouveaux styles pour les maquettes d'appareils */
+.projects .proj-content .card .box .project-showcase {
+    position: relative;
+    width: 100%;
+    height: 180px; /* Ajuste cette hauteur selon tes besoins */
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Pour s'assurer que les images ne dépassent pas */
+}
+
+.projects .proj-content .card .box .project-showcase .desktop-mockup {
+    position: absolute;
+    width: 80%; /* Largeur de la maquette desktop */
+    height: auto;
+    background-color: #333; /* Couleur simulant le cadre de l'écran */
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px; /* Rembourrage pour simuler les bords de l'écran */
+    z-index: 1; /* S'assure qu'il est en dessous du mobile si superposition */
+}
+
+.projects .proj-content .card .box .project-showcase .desktop-mockup img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 4px; /* Rayon de bordure pour l'image à l'intérieur */
+}
+
+.projects .proj-content .card .box .project-showcase .mobile-mockup {
+    position: absolute;
+    width: 30%; /* Largeur de la maquette mobile */
+    height: auto;
+    background-color: #333; /* Couleur simulant le cadre de l'écran */
+    border-radius: 15px; /* Plus arrondi pour un téléphone */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    right: 10%; /* Positionnement du téléphone */
+    bottom: -10%; /* Positionnement du téléphone (peut être ajusté pour le chevauchement) */
+    padding: 5px;
+    z-index: 2; /* S'assure qu'il est au-dessus du desktop */
+}
+
+.projects .proj-content .card .box .project-showcase .mobile-mockup img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px; /* Rayon de bordure pour l'image à l'intérieur */
+}
+
+/* Ajustements responsives pour les maquettes (optionnel mais recommandé) */
+@media (max-width: 991px) {
+    .projects .proj-content .card .box .project-showcase {
+        height: 150px; /* Ajuster la hauteur pour les écrans plus petits */
+    }
+    .projects .proj-content .card .box .project-showcase .desktop-mockup {
+        width: 90%;
+    }
+    .projects .proj-content .card .box .project-showcase .mobile-mockup {
+        width: 35%;
+        right: 5%;
+        bottom: -5%;
+    }
+}
+
+@media (max-width: 768px) {
+    .projects .proj-content .card .box .project-showcase {
+        height: 120px;
+    }
+    .projects .proj-content .card .box .project-showcase .desktop-mockup {
+        width: 95%;
+        padding: 5px;
+    }
+    .projects .proj-content .card .box .project-showcase .mobile-mockup {
+        width: 40%;
+        right: 2%;
+        bottom: -2%;
+        padding: 3px;
+    }
+}
+
+
+/* ===================================== */
+/* Section Projets */
+/* ===================================== */
+.projects {
+    padding: 100px 0;
+    background: #f9f9f9; /* Légère couleur de fond pour la section */
+}
+
+.projects .title {
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 40px;
+    font-weight: 500;
+    position: relative;
+    padding-bottom: 20px;
+}
+.projects .title::before {
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    width: 180px;
+    height: 3px;
+    background: #111;
+    transform: translateX(-50%);
+}
+.projects .title::after {
+    content: "ce que j'ai fait"; /* Personnalisable */
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    font-size: 20px;
+    color: crimson; /* Couleur de ton thème, ex: rouge cramoisi */
+    padding: 0 5px;
+    background: #f9f9f9; /* Doit correspondre au fond de la section */
+    transform: translateX(-50%);
+}
+
+.projects .proj-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px; /* Espace entre les cartes de projet */
+}
+
+.projects .proj-content .card {
+    background: #fff;
+    border-radius: 8px; /* Bords légèrement arrondis pour les cartes */
+    padding: 25px 35px;
+    text-align: center;
+    width: calc(33.333% - 20px); /* 3 colonnes avec un peu de marge */
+    /* Ajustement pour que l'image ne dépasse pas la hauteur désirée */
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* Ombre douce */
+    transition: all 0.3s ease;
+    overflow: hidden; /* S'assure que le contenu ne déborde pas */
+}
+
+.projects .proj-content .card:hover {
+    transform: translateY(-5px); /* Léger soulèvement au survol */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2); /* Ombre plus prononcée */
+}
+
+.projects .proj-content .card .box {
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* S'assure que la box remplit la carte */
+}
+
+.projects .proj-content .card .text {
+    font-size: 25px;
+    font-weight: 600; /* Plus de gras pour le titre du projet */
+    margin: 20px 0 10px 0; /* Espacement après la showcase */
+    color: #333;
+}
+
+.projects .proj-content .card p {
+    color: #666;
+    line-height: 1.7;
+    flex-grow: 1; /* Permet au paragraphe de prendre l'espace restant */
+    font-size: 15px;
+}
+
+/* ===================================== */
+/* Styles spécifiques pour les maquettes d'appareils (Showcase) */
+/* ===================================== */
+.projects .proj-content .card .box .project-showcase {
+    position: relative;
+    width: 100%;
+    height: 220px; /* Hauteur fixe pour la zone d'affichage des maquettes */
+    /* Ajuste cette hauteur selon tes besoins pour que tout rentre bien */
+    margin-bottom: 15px; /* Moins d'espace avant le texte si nécessaire */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e0e0e0; /* Fond gris clair pour la zone showcase */
+    border-radius: 6px;
+    overflow: hidden; /* Crucial pour que les images du carrousel et mobiles ne dépassent pas */
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.05); /* Légère ombre interne */
+}
+
+/* Conteneur de la maquette desktop */
+.projects .proj-content .card .box .project-showcase .desktop-view {
+    position: absolute; /* Positionnement absolu pour le contrôle total */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centrage parfait */
+    width: 95%; /* Largeur de la maquette desktop à l'intérieur du showcase */
+    height: 85%; /* Hauteur de la maquette desktop */
+    background-color: #000; /* Couleur simulant le cadre de l'écran d'ordinateur */
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4); /* Ombre plus prononcée pour l'effet 3D */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px; /* Rembourrage pour simuler les bords de l'écran */
+    overflow: hidden; /* Cache ce qui dépasse du carrousel */
+    z-index: 1; /* S'assure qu'il est en dessous des mobiles */
+}
+
+/* Styles pour le carrousel desktop (Slick Carousel) */
+.projects .proj-content .card .box .project-showcase .desktop-view .desktop-carousel {
+    width: 100%;
+    height: 100%;
+    /* Retire les paddings internes par défaut de Slick pour que l'image remplisse bien */
+}
+
+.projects .proj-content .card .box .project-showcase .desktop-view .desktop-carousel .slick-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* S'assure que chaque slide remplit la hauteur */
+}
+
+.projects .proj-content .card .box .project-showcase .desktop-view .desktop-carousel img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* L'image s'ajuste tout en gardant ses proportions */
+    display: block;
+    border-radius: 4px;
+}
+
+/* ===================================== */
+/* Styles pour le conteneur des maquettes mobiles */
+/* ===================================== */
+.projects .proj-content .card .box .project-showcase .mobile-views-container {
+    position: absolute;
+    /* Positionnement pour les mobiles sur l'écran desktop */
+    top: 60%; /* Ajuste pour qu'ils apparaissent "sur" le desktop */
+    left: 75%; /* Décalage vers la droite du desktop */
+    transform: translate(-50%, -50%); /* Ajuste le centrage par rapport à top/left */
+    width: 60%; /* Laisser de la place pour les mobiles */
+    height: 100%; /* S'étend sur la hauteur du showcase */
+    display: flex;
+    justify-content: space-around; /* Espacement équitable entre les mobiles */
+    align-items: center;
+    pointer-events: none; /* Permet les clics à travers ce conteneur */
+    z-index: 2; /* Les mobiles sont au-dessus du desktop */
+}
+
+/* Styles pour chaque maquette mobile */
+.projects .proj-content .card .box .project-showcase .mobile-mockup {
+    position: relative;
+    width: 45%; /* Largeur de chaque mobile (deux mobiles sur une ligne) */
+    height: 90%; /* Hauteur relative au mobile-views-container */
+    background-color: #000; /* Cadre du téléphone */
+    border-radius: 25px; /* Plus arrondi pour un téléphone */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px; /* Rembourrage pour simuler les bords du téléphone */
+    z-index: 3; /* Assure qu'ils sont au-dessus de tout */
+    pointer-events: auto; /* Rétablit les événements pour les mobiles si nécessaire */
+    margin: 0 5px; /* Espacement entre les mobiles */
+    overflow: hidden; /* Cache ce qui dépasse du cadre du téléphone */
+    flex-shrink: 0; /* Empêche les mobiles de rétrécir sur les petits écrans */
+}
+
+.projects .proj-content .card .box .project-showcase .mobile-mockup img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* L'image couvrira l'espace du téléphone */
+    display: block;
+    border-radius: 15px; /* Rayon de bordure pour l'image à l'intérieur du téléphone */
+}
+
+/* Style spécifique pour le deuxième mobile pour un léger décalage */
+.projects .proj-content .card .box .project-showcase .mobile-views-container .second-mobile {
+    transform: translateY(15px); /* Décalage léger vers le bas pour une meilleure visibilité */
+    margin-left: -20px; /* Léger chevauchement pour l'effet */
+    z-index: 4; /* Le second mobile est légèrement plus au-dessus s'il y a chevauchement */
+}
+
+
+/* ===================================== */
+/* Media Queries pour la Section Projets (Responsivité) */
+/* ===================================== */
+
+@media (max-width: 1100px) {
+    .projects .proj-content .card {
+        width: calc(50% - 20px); /* 2 colonnes sur les écrans plus petits */
+    }
+}
+
+@media (max-width: 768px) {
+    .projects .proj-content .card {
+        width: 100%; /* 1 colonne sur mobiles */
+        margin-bottom: 20px;
+    }
+    .projects .proj-content .card .box .project-showcase {
+        height: 200px; /* Hauteur ajustée pour les petits écrans */
+    }
+    .projects .proj-content .card .box .project-showcase .desktop-view {
+        width: 95%;
+        height: 80%;
+        padding: 8px;
+    }
+    .projects .proj-content .card .box .project-showcase .mobile-views-container {
+        /* Les mobiles peuvent se chevaucher ou se réorganiser sur de très petits écrans */
+        top: 65%; /* Ajuste la position si nécessaire */
+        left: 50%;
+        width: 80%; /* Occupe plus de largeur sur petit écran */
+        flex-wrap: wrap; /* Permet aux mobiles de passer à la ligne */
+        justify-content: center;
+        align-items: flex-end; /* Aligne les mobiles vers le bas de l'écran desktop */
+    }
+    .projects .proj-content .card .box .project-showcase .mobile-mockup {
+        width: 40%; /* Prend plus de place sur les petits écrans */
+        height: 70%;
+        border-radius: 15px;
+        padding: 6px;
+        margin: 5px; /* Marge entre les mobiles lorsqu'ils sont côte à côte */
+    }
+    .projects .proj-content .card .box .project-showcase .mobile-views-container .second-mobile {
+        transform: translateY(0); /* Désactive le décalage sur mobile si wrap */
+        margin-left: 5px; /* Réinitialise le chevauchement si wrap */
+    }
+}
+
+@media (max-width: 500px) {
+    .projects .title {
+        font-size: 35px;
+    }
+    .projects .title::after {
+        font-size: 18px;
+    }
+    .projects .proj-content .card .box .project-showcase {
+        height: 180px;
+    }
+    .projects .proj-content .card .box .project-showcase .desktop-view {
+        padding: 5px;
+    }
+    .projects .proj-content .card .box .project-showcase .mobile-views-container {
+        width: 90%;
+        top: 70%;
+    }
+    .projects .proj-content .card .box .project-showcase .mobile-mockup {
+        width: 45%;
+        height: 60%;
+        border-radius: 10px;
+        padding: 5px;
+    }
 }
