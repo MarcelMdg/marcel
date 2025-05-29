@@ -62,9 +62,28 @@
       backSpeed: 60,
       loop: true
     });
+    
+    // Initialisation du carrousel pour les maquettes desktop
+    $('.desktop-carousel').slick({
+        dots: false,        // Masquer les points de pagination
+        infinite: true,     // Faire boucler le carrousel
+        speed: 500,         // Vitesse de transition
+        slidesToShow: 1,    // Afficher 1 slide à la fois
+        slidesToScroll: 1,  // Défiler 1 slide à la fois
+        autoplay: true,     // Activer le défilement automatique
+        autoplaySpeed: 3000, // Temps entre chaque slide (3 secondes)
+        arrows: false,      // Masquer les flèches de navigation
+        pauseOnHover: true, // Mettre en pause au survol
+        fade: true,         // Transition en fondu (au lieu de glisser)
+        cssEase: 'linear'   // Facilite la transition en fondu
+    });
+      
+
 
     // Configuration du carrousel (commentée)
     // $('.carousel').owlCarousel({ ... });
   });
 
   console.log("Le script JavaScript combiné est chargé ! Tous les effets sont actifs.")
+
+
